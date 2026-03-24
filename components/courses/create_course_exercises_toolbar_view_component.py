@@ -10,7 +10,8 @@ class CreateCourseExercisesToolbarViewComponent(BaseComponent):
         super().__init__(page)
         self.title = Text(page, "create-course-exercises-box-toolbar-title-text",
                           name="create course exercises toolbar title")
-        self.create_exercise_button = Button(page, "AddIcon", name="add exercise toolbar button")
+        self.create_exercise_button = Button(page, "create-course-exercises-box-toolbar-create-exercise-button",
+                                             name="add exercise toolbar button")
 
     def check_visible(self):
         self.title.check_visible()

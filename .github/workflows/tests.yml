@@ -71,6 +71,7 @@ jobs:
       - name: Download allure report history
         uses: actions/download-artifact@v5
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           name: allure-history-artifact
       # 9. Шаг для деплоя отчёта Allure на GitHub Pages, чтобы его можно было просматривать в браузере
       - name: Deploy report to Github Pages

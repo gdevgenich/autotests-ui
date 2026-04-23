@@ -56,7 +56,7 @@ jobs:
           allure_history: allure-history  # Указываем каталог для истории отчётов Allure
       # 7. Шаг для сохранения артефакта
       - name: Upload Allure Reporn results
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: allure-history-artifact
           path: allure-history
@@ -66,8 +66,9 @@ jobs:
       runs-on: ubuntu-latest
       needs: run-tests
       steps:
+      # 8. Скачиваем артифакт с аллюр отчетом
       - name: Download allure report history
-        uses: actions/download-artifact
+        uses: actions/download-artifact@v5
         with:
           name: allure-history-artifact
       # 9. Шаг для деплоя отчёта Allure на GitHub Pages, чтобы его можно было просматривать в браузере

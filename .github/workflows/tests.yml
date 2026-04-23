@@ -58,7 +58,7 @@ jobs:
       - name: Upload Allure Reporn results
         uses: actions/upload-artifact@v7
         with:
-          name: allure-history-artifact
+          name: allure-history
           path: allure-history
 
   publish-report:
@@ -69,7 +69,7 @@ jobs:
       - name: Download allure report history
         uses: actions/download-artifact@v7
         with:
-          name: allure-history-artifact
+          name: allure-history
       # 9. Шаг для деплоя отчёта Allure на GitHub Pages, чтобы его можно было просматривать в браузере
       - name: Deploy report to Github Pages
         uses: peaceiris/actions-gh-pages@v4  # Используем GitHub Action для публикации отчёта на GitHub Pages

@@ -1,5 +1,4 @@
 import pytest
-from typing import Generator
 from _pytest.fixtures import SubRequest
 from playwright.sync_api import Playwright, Page
 
@@ -10,7 +9,7 @@ from config import settings
 
 
 @pytest.fixture(params=settings.browsers)
-def chromium_page(request: SubRequest, playwright: Playwright) -> Generator[Page]:
+def chromium_page(request: SubRequest, playwright: Playwright) -> Page:
     yield from initialize_playwright_page(playwright, browser_type=request.param, test_name=request.node.name)
 
 
@@ -34,7 +33,7 @@ def initialize_browser_state(playwright: Playwright):
 
 
 @pytest.fixture(params=settings.browsers)
-def chromium_page_with_state(initialize_browser_state, request: SubRequest, playwright: Playwright) -> Generator[Page]:
+def chromium_page_with_state(initialize_browser_state, request: SubRequest, playwright: Playwright) -> Page:
     yield from initialize_playwright_page(
         playwright,
         browser_type=request.param,

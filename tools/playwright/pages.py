@@ -1,6 +1,5 @@
 import allure
 from playwright.sync_api import Playwright, Page
-from typing import Generator
 from config import settings
 
 
@@ -9,7 +8,7 @@ def initialize_playwright_page(
         browser_type: str,
         test_name: str,
         storage_state: str | None = None
-) -> Generator[Page]:
+) -> Page:
     # Используем settings.headless
     browser = playwright[browser_type].launch(headless=settings.headless)
     # Используем settings.videos_dir

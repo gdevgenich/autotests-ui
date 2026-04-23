@@ -56,7 +56,7 @@ jobs:
           allure_history: allure-history  # Указываем каталог для истории отчётов Allure
       # 7. Шаг для сохранения артефакта
       - name: Upload Allure Reporn results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # Токен для аутентификации на GitHub
           name: allure-history-artifact
